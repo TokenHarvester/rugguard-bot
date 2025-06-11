@@ -106,12 +106,18 @@ The bot implements multiple protections:
 - Reduced API calls (checks only 3 trusted accounts)
 
 **Environment Variables**
-Variable	Required	Description
-API_KEY	      Yes	  Twitter API Key
-API_SECRET	  Yes	  Twitter API Secret
-BEARER_TOKEN	Yes	  For search endpoints
-ACCESS_TOKEN	Yes	  User access token
-ACCESS_SECRET	Yes	  User access secret
+
+**Variable**	**Required**	**Description**
+
+API_KEY	          Yes	       Twitter API Key
+
+API_SECRET	      Yes        Twitter API Secret
+
+BEARER_TOKEN	    Yes        For search endpoints
+
+ACCESS_TOKEN	    Yes  	     User access token
+
+ACCESS_SECRET	    Yes    	   User access secret
 
 **Monitoring Process**
 Checks every 5 minutes for new replies
@@ -131,12 +137,7 @@ Reply failures	     Check Twitter app permissions
 Trusted check fails	 Verify usernames in trusted.txt
 
 **Code Structure**
-graph TD
-    A[main.py] --> B[monitor_replies]
-    B --> C[process_trigger]
-    C --> D[analyze_user]
-    D --> E[check_trusted_followers]
-    D --> F[post_reply]
+
 
 
 **Key Functions**
@@ -152,8 +153,8 @@ graph TD
 
 **Note:** The bot is optimized for Replit deployment with built-in rate limit handling. For production use, consider adding:
 
-Error logging
+- Error logging
 
-Database for processed tweets
+- Database for processed tweets
 
-Enhanced metrics analysis
+- Enhanced metrics analysis
