@@ -135,12 +135,13 @@ The bot implements multiple protections:
 - Tracks processed tweets to avoid duplicates
 
 ### Troubleshooting
-Error	                Solution
-Missing .env file	   Copy .env.example → .env
-Rate limit errors	   Wait 15-30 minutes
-"No user data"	     Verify API permissions
-Reply failures	     Check Twitter app permissions
-Trusted check fails	 Verify usernames in trusted.txt
+| Error               | Solution                        |
+|---------------------|---------------------------------|
+| Missing .env file   | Copy .env.example → .env        | 
+| Rate limit errors   | Wait 15-30 minutes              | 
+| "No user data"      | Verify API permissions          |
+| Reply failures      | Check Twitter app permissions   |
+| Trusted check fails | Verify usernames in trusted.txt |
 
 **Code Structure**
 
