@@ -4,7 +4,23 @@ A Twitter/X bot for analyzing user trustworthiness in response to specific trigg
 This bot monitors for replies containing a specific phrase, analyzes the original
 author's account for trust signals, and posts a trust report in response.
 
-![Bot Workflow](https://via.placeholder.com/600x400?text=RUGGUARD+Bot+Workflow) *(Replace with actual workflow diagram)*
+## Architecture Overview
+
+```mermaid
+flowchart TD
+    A[Monitor Replies Every 5min] --> B{"Contains<br>'riddle me this'?"}
+    B -->|Yes| C[Get Original Tweet Author]
+    B -->|No| A
+    C --> D[Analyze Account Metrics]
+    D --> E[Check Trusted Connections]
+    E --> F[Generate Trust Report]
+    F --> G[Post Reply]
+    G --> A
+    style A fill:#4CAF50,stroke:#388E3C
+    style B fill:#FFC107,stroke:#FFA000
+    style C,D,E fill:#2196F3,stroke:#1565C0
+    style F,G fill:#9C27B0,stroke:#7B1FA2
+```
 
 ## Table of Contents
 - [Features](#features)
