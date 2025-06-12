@@ -145,7 +145,7 @@ The bot implements multiple protections:
 
 **Code Structure**
 
-![Code Structure image](https://github.com/TokenHarvester/rugguard-bot/blob/main/code%20structure%20image.png)
+<img src="https://github.com/TokenHarvester/rugguard-bot/blob/main/code%20structure%20image.png" alt="Code Strcture image" width="300" height="300" />
 
 **Key Functions**
 - monitor_replies(): Main listening loop
