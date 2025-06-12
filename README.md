@@ -1,5 +1,8 @@
 # RUGGUARD X Bot
-A Twitter/X bot that analyzes crypto accounts for scam risk when triggered by "riddle me this".
+A Twitter/X bot for analyzing user trustworthiness in response to specific triggers.
+
+This bot monitors for replies containing a specific phrase, analyzes the original
+author's account for trust signals, and posts a trust report in response.
 
 ![Bot Workflow](https://via.placeholder.com/600x400?text=RUGGUARD+Bot+Workflow) *(Replace with actual workflow diagram)*
 
@@ -114,17 +117,13 @@ The bot implements multiple protections:
 
 ### Environment Variables
 
-**Variable**	**Required**	**Description**
-
-API_KEY	          Yes	       Twitter API Key
-
-API_SECRET	      Yes        Twitter API Secret
-
-BEARER_TOKEN	    Yes        For search endpoints
-
-ACCESS_TOKEN	    Yes  	     User access token
-
-ACCESS_SECRET	    Yes    	   User access secret
+| Variable        | Required | Description          |
+|-----------------|----------|----------------------|
+| API_KEY         | Yes      | Twitter API Key      |
+| API_SECRET      | Yes      | Twitter API Secret   |
+| BEARER_TOKEN    | Yes      | For search endpoints |
+| ACCESS_TOKEN    | Yes      | User access token    |
+| ACCESS_SECRET   | Yes      | User access secret   |
 
 ### Monitoring Process
 - Checks every 5 minutes for new replies
