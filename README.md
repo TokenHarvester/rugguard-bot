@@ -13,8 +13,8 @@ A Twitter/X bot that analyzes crypto accounts for scam risk when triggered by "r
 - [Trusted Accounts System](#trusted-accounts-system)
 - [Rate Limit Handling](#rate-limit-handling)
 - [Environment Variables](#environment-variables)
-- [Troubleshooting](#troubleshooting)
 - [Monitoring Process](#monitoring-process)
+- [Troubleshooting](#troubleshooting)
 
 ## Features
 - 🔍 Detects replies to @projectrugguard containing "riddle me this"
@@ -54,28 +54,35 @@ A Twitter/X bot that analyzes crypto accounts for scam risk when triggered by "r
    cd rugguard-bot
 
 2. Install dependencies:
+```bash   
 pip install -r requirements.txt
-
+```
 3. Create .env file:
+```bash   
 API_KEY=your_api_key
-API_SECRET=your_api_secret
-BEARER_TOKEN=your_bearer_token
-ACCESS_TOKEN=your_access_token
-ACCESS_SECRET=your_access_secret
 
-**Running the Bot**
+API_SECRET=your_api_secret
+
+BEARER_TOKEN=your_bearer_token
+
+ACCESS_TOKEN=your_access_token
+
+ACCESS_SECRET=your_access_secret
+```
+### Running the Bot
 
 **Local Execution**
 python main.py
 
 **Expected Behavior**
-🔍 RUGGUARD-Bot is listening for triggers...
-Checking for new replies...
-🚨 Trigger detected! Tweet ID: 123456789
-👤 Original author: 987654321
-✅ Replied to 123456789
 
-**Trusted Accounts System**
+- 🔍 RUGGUARD-Bot is listening for triggers...
+- Checking for new replies...
+- 🚨 Trigger detected! Tweet ID: 123456789
+- 👤 Original author: 987654321
+- ✅ Replied to 123456789
+
+### Trusted Accounts System
 The bot checks if analyzed accounts are followed by at least 3 accounts from trusted.txt:
 
 TRUSTED_ACCOUNTS = [
@@ -93,8 +100,8 @@ TRUSTED_ACCOUNTS = [
 3. No @ symbols needed
 
 4. Bot checks first 3 accounts to avoid rate limits
-
-**Rate Limit Handling**
+   
+### Rate Limit Handling
 The bot implements multiple protections:
 
 - 5-minute initial delay between checks
@@ -105,7 +112,7 @@ The bot implements multiple protections:
 
 - Reduced API calls (checks only 3 trusted accounts)
 
-**Environment Variables**
+### Environment Variables
 
 **Variable**	**Required**	**Description**
 
@@ -119,16 +126,16 @@ ACCESS_TOKEN	    Yes  	     User access token
 
 ACCESS_SECRET	    Yes    	   User access secret
 
-**Monitoring Process**
-Checks every 5 minutes for new replies
+### Monitoring Process
+- Checks every 5 minutes for new replies
 
-Searches for: to:projectrugguard "riddle me this" is:reply
+- Searches for: to:projectrugguard "riddle me this" is:reply
 
-Processes up to 10 recent replies per cycle
+- Processes up to 10 recent replies per cycle
 
-Tracks processed tweets to avoid duplicates
+- Tracks processed tweets to avoid duplicates
 
-**Troubleshooting**
+### Troubleshooting
 Error	                Solution
 Missing .env file	   Copy .env.example → .env
 Rate limit errors	   Wait 15-30 minutes
